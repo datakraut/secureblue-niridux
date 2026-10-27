@@ -20,11 +20,30 @@ modules:
             chroot: fedora-44-x86_64
           - name: wezfurlong/wezterm-nightly
             chroot: fedora-44-x86_64
+  - type: script
+    snippets:
+      - test -f /usr/lib/systemd/user/dms.service
+      - mkdir -p /usr/lib/systemd/user/niri.service.wants
+      - ln -sfn ../dms.service /usr/lib/systemd/user/niri.service.wants/dms.service
+  - type: systemd
+    system:
+      enabled:
+        - greetd.service
+      disabled:
+        - gdm.service
     install:
       packages:
         - niri
         - quickshell
         - dms
+        - dms-greeter
         - wezterm
+        - cliphist
+        - wl-clipboard
+        - cava
+        - dgop
+        - danksearch
+        - matugen
+        - qt6-qtmultimedia
 
   - type: signing
