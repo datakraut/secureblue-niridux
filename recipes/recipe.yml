@@ -15,8 +15,11 @@ modules:
       copr:
         enable:
           - duxlabs/dux
+            chroot: fedora-44-x86_64
           - duxlabs/dms
+            chroot: fedora-44-x86_64
           - wezfurlong/wezterm-nightly
+            chroot: fedora-44-x86_64
     install:
       packages:
         - niri
