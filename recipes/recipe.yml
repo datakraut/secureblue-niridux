@@ -34,13 +34,16 @@ modules:
         - dms-greeter
         - dgop
         - danksearch
-        - dankcalendar-git
-        - dux-files-git
+        - dankcalendar
+        - dux-files
         - matugen
         - qt6-qtmultimedia
         - accountsservice
         - i2c-tools
         - acl
+        - xdg-desktop-portal-gnome
+        - xdg-desktop-portal-gtk
+        - gnome-keyring
     remove:
       auto-remove: true
       packages:
@@ -61,7 +64,6 @@ modules:
         - gnome-control-center
         - gnome-control-center-filesystem
         - gnome-initial-setup
-        - xdg-desktop-portal-gnome
         - nautilus
         - nautilus-extensions
         - papers-nautilus
@@ -74,6 +76,7 @@ modules:
         - gnome-bluetooth
         - gnome-user-docs
         - gnome-app-list
+        - alacritty
 
   - type: files
     files:
