@@ -14,11 +14,11 @@ modules:
       cleanup: true
       copr:
         enable:
-          - duxlabs/dux
+          - name: duxlabs/dux
             chroot: fedora-44-x86_64
-          - duxlabs/dms
+          - name: duxlabs/dms
             chroot: fedora-44-x86_64
-          - wezfurlong/wezterm-nightly
+          - name: wezfurlong/wezterm-nightly
             chroot: fedora-44-x86_64
     install:
       packages:
