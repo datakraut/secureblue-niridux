@@ -3,10 +3,10 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 
 name: secureblue-niridux
-description: Secureblue GNOME with Niri and Dux Shell
+description: Secureblue with Niri and Dux
 
 base-image: ghcr.io/secureblue/silverblue-main-hardened
-image-version: latest
+image-version: 44
 
 
 modules:
@@ -25,20 +25,55 @@ modules:
       packages:
         - niri
         - quickshell-git
-        - dms
-        - dms-greeter
         - greetd
         - wezterm
         - cliphist
         - wl-clipboard
         - cava
+        - dms
+        - dms-greeter
         - dgop
         - danksearch
+        - dankcalendar-git
+        - dux-files-git
         - matugen
         - qt6-qtmultimedia
         - accountsservice
         - i2c-tools
         - acl
+    remove:
+      auto-remove: true
+      packages:
+        - gdm
+        - gnome-shell
+        - gnome-shell-common
+        - gnome-shell-extension-common
+        - gnome-shell-extension-apps-menu
+        - gnome-shell-extension-launch-new-instance
+        - gnome-shell-extension-places-menu
+        - gnome-shell-extension-window-list
+        - gnome-session
+        - gnome-session-wayland-session
+        - gnome-classic-session
+        - mutter
+        - mutter-common
+        - gnome-settings-daemon
+        - gnome-control-center
+        - gnome-control-center-filesystem
+        - gnome-initial-setup
+        - xdg-desktop-portal-gnome
+        - nautilus
+        - nautilus-extensions
+        - papers-nautilus
+        - ptyxis
+        - gnome-browser-connector
+        - gnome-disk-utility
+        - gnome-system-monitor
+        - gnome-tweaks
+        - gnome-color-manager
+        - gnome-bluetooth
+        - gnome-user-docs
+        - gnome-app-list
 
   - type: files
     files:
@@ -56,7 +91,5 @@ modules:
     system:
       enabled:
         - greetd.service
-      disabled:
-        - gdm.service
 
   - type: signing

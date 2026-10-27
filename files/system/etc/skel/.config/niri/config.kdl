@@ -1,0 +1,68 @@
+gestures {
+    hot-corners {
+        off
+    }
+}
+
+input {
+    keyboard {
+        xkb {
+        }
+        numlock
+    }
+
+    focus-follows-mouse max-scroll-amount="0%"
+}
+
+workspace "1"
+workspace "2"
+workspace "3"
+
+environment {
+    XDG_CURRENT_DESKTOP "niri"
+    QT_QPA_PLATFORM "wayland"
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+    QT_QPA_PLATFORMTHEME "gtk3"
+    QT_QPA_PLATFORMTHEME_QT6 "gtk3"
+}
+
+layer-rule {
+    match namespace="^quickshell$"
+    place-within-backdrop true
+}
+
+layer-rule {
+    match namespace="^dms:blurwallpaper$"
+    place-within-backdrop true
+}
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+prefer-no-csd
+
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+debug {
+    honor-xdg-activation-with-invalid-serial
+}
+
+recent-windows {
+    binds {
+        Alt+Tab         { next-window scope="output"; }
+        Alt+Shift+Tab   { previous-window scope="output"; }
+        Alt+grave       { next-window filter="app-id"; }
+        Alt+Shift+grave { previous-window filter="app-id"; }
+    }
+}
+
+// Dux-managed configuration fragments
+include optional=true "dms/colors.kdl"
+include optional=true "dms/layout.kdl"
+include optional=true "dms/alttab.kdl"
+include optional=true "dms/binds.kdl"
+include optional=true "dms/outputs.kdl"
+include optional=true "dms/cursor.kdl"
+include optional=true "dms/input.kdl"
+include optional=true "dms/windowrules.kdl"
