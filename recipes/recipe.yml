@@ -15,16 +15,18 @@ modules:
       cleanup: true
       copr:
         enable:
-          - name: duxlabs/dux
+          - name: avengemedia/danklinux
             chroot: fedora-44-x86_64
-          - name: duxlabs/dms
+          - name: avengemedia/dms
+            chroot: fedora-44-x86_64
+          - name: niri-wm/niri
             chroot: fedora-44-x86_64
           - name: wezfurlong/wezterm-nightly
             chroot: fedora-44-x86_64
     install:
       packages:
         - niri
-        - quickshell
+        - quickshell-git
         - dms
         - dms-greeter
         - greetd
@@ -37,7 +39,6 @@ modules:
         - matugen
         - qt6-qtmultimedia
         - accountsservice
-        - power-profiles-daemon
         - i2c-tools
         - acl
 
