@@ -8,6 +8,7 @@ description: Secureblue GNOME with Niri and Dux Shell
 base-image: ghcr.io/secureblue/silverblue-main-hardened
 image-version: latest
 
+
 modules:
   - type: dnf
     repos:
@@ -20,23 +21,13 @@ modules:
             chroot: fedora-44-x86_64
           - name: wezfurlong/wezterm-nightly
             chroot: fedora-44-x86_64
-  - type: script
-    snippets:
-      - test -f /usr/lib/systemd/user/dms.service
-      - mkdir -p /usr/lib/systemd/user/niri.service.wants
-      - ln -sfn ../dms.service /usr/lib/systemd/user/niri.service.wants/dms.service
-  - type: systemd
-    system:
-      enabled:
-        - greetd.service
-      disabled:
-        - gdm.service
     install:
       packages:
         - niri
         - quickshell
         - dms
         - dms-greeter
+        - greetd
         - wezterm
         - cliphist
         - wl-clipboard
@@ -45,5 +36,28 @@ modules:
         - danksearch
         - matugen
         - qt6-qtmultimedia
+        - accountsservice
+        - power-profiles-daemon
+        - i2c-tools
+        - acl
+
+  - type: files
+    files:
+      - source: system
+        destination: /
+
+  - type: script
+    snippets:
+      - test -f /usr/lib/systemd/user/dms.service
+      - test -f /usr/lib/systemd/user/niri.service
+      - mkdir -p /usr/lib/systemd/user/niri.service.wants
+      - ln -sfn ../dms.service /usr/lib/systemd/user/niri.service.wants/dms.service
+
+  - type: systemd
+    system:
+      enabled:
+        - greetd.service
+      disabled:
+        - gdm.service
 
   - type: signing
