@@ -19,8 +19,6 @@ modules:
             chroot: fedora-44-x86_64
           - name: avengemedia/dms
             chroot: fedora-44-x86_64
-          - name: niri-wm/niri
-            chroot: fedora-44-x86_64
           - name: wezfurlong/wezterm-nightly
             chroot: fedora-44-x86_64
     install:
