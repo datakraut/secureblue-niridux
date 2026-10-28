@@ -1,0 +1,10 @@
+
+[Unit]
+Description=Ensure SELinux context for DMS Greeter cache
+After=local-fs.target
+Before=greetd.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/dms-greeter-selinux-setup
+RemainAfterExit=yes

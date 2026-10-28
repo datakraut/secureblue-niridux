@@ -86,7 +86,6 @@ modules:
 
   - type: script
     snippets:
-      - semanage fcontext -m -t cache_home_t '/var/cache/dms-greeter(/.*)?' || semanage fcontext -a -t cache_home_t '/var/cache/dms-greeter(/.*)?'
       - test -f /usr/lib/systemd/user/dms.service
       - test -f /usr/lib/systemd/user/niri.service
       - mkdir -p /usr/lib/systemd/user/niri.service.wants

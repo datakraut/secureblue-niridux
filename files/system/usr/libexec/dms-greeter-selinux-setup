@@ -1,0 +1,14 @@
+
+#!/usr/bin/bash
+set -euo pipefail
+
+pattern='/var/cache/dms-greeter(/.*)?'
+
+if /usr/sbin/semanage fcontext -l -C |
+    /usr/bin/grep -Fq -- "$pattern"; then
+    /usr/sbin/semanage fcontext -m -t cache_home_t "$pattern"
+else
+    /usr/sbin/semanage fcontext -a -t cache_home_t "$pattern"
+fi
+
+/usr/sbin/restorecon -RFv /var/cache/dms-greeter
