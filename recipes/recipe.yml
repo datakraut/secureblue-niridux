@@ -6,7 +6,7 @@ name: secureblue-niridux
 description: Secureblue with Niri and Dux
 
 base-image: ghcr.io/secureblue/silverblue-main-hardened
-image-version: 44
+image-version: 45
 
 
 modules:
@@ -15,36 +15,26 @@ modules:
       cleanup: true
       copr:
         enable:
-          - name: avengemedia/danklinux
-            chroot: fedora-44-x86_64
-          - name: avengemedia/dms-git
-            chroot: fedora-44-x86_64
+          - name: duxlabs/dux-repo
+            chroot: fedora-45-x86_64
+          - name: duxlabs/dms-git
+            chroot: fedora-45-x86_64
           - name: wezfurlong/wezterm-nightly
-            chroot: fedora-44-x86_64
+            chroot: fedora-45-x86_64
     install:
       packages:
         - niri
         - quickshell-git
-        - greetd
         - wezterm
+        - dms
+        - dux-greeter
+        - dux-gop
+        - dux-files
         - cliphist
         - wl-clipboard
-        - cava
-        - dms
-        - dms-greeter
-        - dgop
-        - danksearch
-        - dankcalendar
-        - dux-files
-        - matugen
-        - qt6-qtmultimedia
-        - accountsservice
-        - i2c-tools
-        - acl
+        - gnome-keyring
         - xdg-desktop-portal-gnome
         - xdg-desktop-portal-gtk
-        - gnome-keyring
-        - policycoreutils-python-utils
     remove:
       auto-remove: true
       packages:
