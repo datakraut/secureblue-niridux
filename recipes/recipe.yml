@@ -32,7 +32,6 @@ modules:
         - dux-files
         - cliphist
         - wl-clipboard
-        - gnome-keyring
         - xdg-desktop-portal-gnome
         - xdg-desktop-portal-gtk
     remove:
