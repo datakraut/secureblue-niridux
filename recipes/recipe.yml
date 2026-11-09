@@ -67,6 +67,7 @@ modules:
         - gnome-user-docs
         - gnome-app-list
         - alacritty
+        - gnome-keyring
 
   - type: files
     files:
