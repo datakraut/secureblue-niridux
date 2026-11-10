@@ -19,6 +19,8 @@ modules:
             chroot: fedora-45-x86_64
           - name: duxlabs/dms-git
             chroot: fedora-45-x86_64
+          - name: lionheartp/Hyprland
+            chroot: fedora-45-x86_64
           - name: wezfurlong/wezterm-nightly
             chroot: fedora-45-x86_64
     install:
@@ -34,6 +36,9 @@ modules:
         - wl-clipboard
         - xdg-desktop-portal-gnome
         - xdg-desktop-portal-gtk
+        - hyprland
+        - hyprland-guiutils
+        - xdg-desktop-portal-hyprland
     remove:
       auto-remove: true
       packages:
