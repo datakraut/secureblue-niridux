@@ -17,7 +17,7 @@ modules:
         enable:
           - name: duxlabs/dux-repo
             chroot: fedora-45-x86_64
-          - name: duxlabs/dms
+          - name: duxlabs/dms-git
             chroot: fedora-45-x86_64
           - name: lionheartp/Hyprland
             chroot: fedora-45-x86_64
@@ -26,7 +26,6 @@ modules:
     install:
       packages:
         - niri
-        - dux-qt-base
         - wezterm
         - dms
         - dux-greeter
@@ -71,7 +70,6 @@ modules:
         - gnome-bluetooth
         - gnome-user-docs
         - gnome-app-list
-        - alacritty
         - gnome-keyring
 
   - type: files
